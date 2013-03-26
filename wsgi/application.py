@@ -13,7 +13,14 @@ def application(environ, start_response):
 		ctype = 'text/html'
 		response_body = '''
 		<!doctype html>
-
+		<html>
+		<head>
+		<title>This is a title</title>
+		<body>
+		<h1>This is a heading</h1>
+		<p>This works</p>
+		</body>
+		</html>
 		'''
 
 	status = '200 OK'
