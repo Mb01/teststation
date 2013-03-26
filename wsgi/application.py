@@ -11,8 +11,7 @@ def application(environ, start_response):
 		response_body = '\n'.join(response_body)
 	else:
 		ctype = 'text/html'
-		response_body = 
-		'''
+		response_body = '''
 		<!doctype html>
 
 		'''
