@@ -1,4 +1,4 @@
-from wsgi.handler import handler
+from wsgi.handler import Handler
 
 
 
