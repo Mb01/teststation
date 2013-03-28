@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import os
 from libs.dbfunc import *
-from routing import router
+from wsgi.routing import router
 
 
 
