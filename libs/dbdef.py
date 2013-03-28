@@ -1,17 +1,9 @@
 import pymongo
 
+connection = pymongo.MongoClient(os.environ['OPENSHIFT_MONGODB_DB_URL'])
 
-MONGO_DB_HOST = os.environ['OPENSHIFT_MONGODB_DB_HOST']
-MONGO_DB_PORT = os.environ['OPENSHIFT_MONGODB_DB_PORT']
-MONGO_DB_USERNAME = os.environ['OPENSHIFT_MONGODB_DB_USERNAME']
-MONGO_DB_PASSWORD = os.environ['OPENSHIFT_MONGODB_DB_PASSWORD']
-
-
+class User:
+    db = connection.users
+    
 
 
-
-
-del MONGO_DB_HOST
-del MONGO_DB_PORT
-del MONGO_DB_USERNAME
-del MONGO_DB_PASSWORD
