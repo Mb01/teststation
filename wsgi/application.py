@@ -7,7 +7,7 @@ from wsgi.routing import router
 
 def application(environ, start_response):
     
-    return routing(environ, start_response)
+    return router(environ, start_response)
 
 
 # Below for testing only
