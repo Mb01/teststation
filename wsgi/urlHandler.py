@@ -8,11 +8,15 @@ jinja_environment = jinja2.Environment(autoescape=True,
             )
 
 class Handler(object):
-    def write(self, *a, **kw):
-        pass
-        #self.response.out.write(*a, **kw)
+    ctype = 'text/plain'
+    
+    def __init__(self, environ):
+        self.environ = environ
+        
+        
     def render_str(self, template, **params):
         t = jinja_environment.get_template(template)
         return t.render(params)
     def render(self, template, **kw):
-        self.write(self.render_str(template, **kw))
+        return self.render_str(template, **kw)
+    
