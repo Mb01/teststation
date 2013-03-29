@@ -3,10 +3,10 @@ import imp
 import os
 import sys
 
-PYCART_DIR = ''.join(['python-', '.'.join(map(str, sys.version_info[:2]))])
+PY_DIR = ''.join(['python-', '.'.join(map(str, sys.version_info[:2]))])
 
 try:
-   zvirtenv = os.path.join(os.environ['OPENSHIFT_HOMEDIR'], PYCART_DIR,
+   zvirtenv = os.path.join(os.environ['OPENSHIFT_HOMEDIR'], PYRT_DIR,
                            'virtenv', 'bin', 'activate_this.py')
    execfile(zvirtenv, dict(__file__ = zvirtenv) )
 except IOError:
@@ -23,15 +23,6 @@ def run_simple_httpd_server(app, ip, port=8080):
    make_server(ip, port, app).serve_forever()
 
 
-#
-# IMPORTANT: Put any additional includes below this line.  If placed above this
-# line, it's possible required libraries won't be in your searchable path
-# 
-
-
-#
-#  main():
-#
 if __name__ == '__main__':
    ip   = os.environ['OPENSHIFT_INTERNAL_IP']
    port = 8080
