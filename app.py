@@ -6,7 +6,7 @@ import sys
 PY_DIR = ''.join(['python-', '.'.join(map(str, sys.version_info[:2]))])
 
 try:
-   zvirtenv = os.path.join(os.environ['OPENSHIFT_HOMEDIR'], PYRT_DIR,
+   zvirtenv = os.path.join(os.environ['OPENSHIFT_HOMEDIR'], PY_DIR,
                            'virtenv', 'bin', 'activate_this.py')
    execfile(zvirtenv, dict(__file__ = zvirtenv) )
 except IOError:
