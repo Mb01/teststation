@@ -9,7 +9,8 @@ jinja_environment = jinja2.Environment(autoescape=True,
 
 class Handler(object):
     def write(self, *a, **kw):
-        self.response.out.write(*a, **kw)
+        pass
+        #self.response.out.write(*a, **kw)
     def render_str(self, template, **params):
         t = jinja_environment.get_template(template)
         return t.render(params)

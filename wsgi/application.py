@@ -1,6 +1,11 @@
 #!/usr/bin/env python
 import os
-from libs.dbfunc import *
+try:
+    from libs.dbfunc import *
+except ImportError:
+    from ..libs.dbfunc import *
+
+    
 from wsgi.routing import router
 
 

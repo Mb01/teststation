@@ -12,17 +12,7 @@ def router(environ, start_response):
         response_body = '\n'.join(response_body)
     else:
         ctype = 'text/html'
-        response_body = '''
-        <!doctype html>
-        <html>
-        <head>
-        <title>This is a title</title>
-        <body>
-        <h1>This is a heading</h1>
-        <p>This works</p>
-        </body>
-        </html>
-        '''
+        response_body = environ
     status = '200 OK'
     response_headers = [('Content-Type', ctype), ('Content-Length', str(len(response_body)))]
     start_response(status, response_headers)
